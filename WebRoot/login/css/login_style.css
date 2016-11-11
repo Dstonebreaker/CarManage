@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{margin:0; padding:0; background:url(../images/bg_0.jpg) no-repeat ; background-attachment:fixed; background-position:center center; }
+.left{float:left}
+.right{float:right}
+#login{background:url(../images/bg_1.png); width:555px; height:403px; position:relative; margin-left:80px; margin-top:150px; left:50%; top:50%;}
+.login_main{width:400px; height:200px; padding:210px 0 0 220px}
+.login_main input{width:200px; height:30px; border:none; background:none; }
+.margintop_1{margin-top:20px;}
+.loginbtn_1{background:url(../images/reset_1.png); width:111px; height:36px; border:none; cursor:pointer; margin-left:80px;}
+.loginbtn_2{background:url(../images/submit_1.png); width:111px; height:36px; border:none; cursor:pointer; margin-top:30px; margin-left:20px;}
+  input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    select:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white  inset;
+           }

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="car" namespace="/car" extends="struts-default">
+		<result-types>
+			<result-type name="jasper"
+				class="com.framework.util.JasperReportByBeanResult"></result-type>
+		</result-types>
+		<action name="sendReport" class="com.car.action.car.CarSendAction"
+			method="sendReport">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/baseMaintainRecord.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="sendRecord" class="com.car.action.car.CarSendAction"
+			method="sendRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/sendRecord.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeSummaryRecord" class="com.car.action.export.UseCarTypeSummaryAction"
+			method="typeSummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/carTypeCollect.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeDaySummaryRecord" class="com.car.action.export.UseCarTypeDaySummaryAction"
+			method="typeDaySummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/carTypeDayCollect.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeMonthSummaryRecord"
+			class="com.car.action.export.UseCarTypeMonthSummaryAction" method="typeMonthSummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/useCarCollectMonth.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeDriverSummaryRecord" class="com.car.action.export.UseCarDriverSummaryAction"
+			method="typeDriverSummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/driverCollect.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeSituationSummaryRecord"
+			class="com.car.action.export.UseCarSituationSummaryAction" method="typeSituationSummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/carUseCollect.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeCountSummaryRecord"
+			class="com.car.action.export.CarCountSummaryAction" method="typeCountSummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/carCollectDeploy.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeSpecialCarSummaryRecord"
+			class="com.car.action.export.SpecialCarCountSummaryAction" method="typeSpecialCarSummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/carCollectSpecial.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+		<action name="typeCarDelpoySummaryRecord"
+			class="com.car.action.export.CarDelpoyDetailSummaryaAction" method="typeCarDelpoySummaryRecord">
+			<result name="success" type="jasper">
+				<param name="location">/jaspers/orgCollectDeploy.jasper</param>
+				<param name="dataSource">myDataSource</param>
+				<param name="format">HTML</param>
+				<param name="parameters">parameter</param>
+				<param name="type">type</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data name="初始数据">
+
+	<resourcetypes name="资源类型">
+		<resourcetype id="0" name="菜单" description="菜单类型会显示在系统首页左侧菜单中" />
+		<resourcetype id="1" name="功能" description="功能类型不会显示在系统首页左侧菜单中" />
+	</resourcetypes>
+
+	<resources name="资源">
+		<resource id="xtgl" name="系统管理" url="/welcome.jsp" description="管理系统的资源、角色、机构、用户等信息" seq="0" iconCls="ext-icon-application_view_tile">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+
+		<resource id="zygl" name="资源管理" url="/securityJsp/maintain/sysResource.jsp" description="管理系统的资源" seq="1" iconCls="ext-icon-newspaper_link" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="zylb" name="资源列表" url="/maintain/sysResource!treeGrid" description="查询资源" seq="0" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zytj" name="添加资源" url="/maintain/sysResource!save" description="添加资源" seq="1" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zybj" name="编辑资源" url="/maintain/sysResource!update" description="编辑资源" seq="2" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zysc" name="删除资源" url="/maintain/sysResource!delete" description="删除资源" seq="3" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zyck" name="查看资源" url="/maintain/sysResource!getById" description="查看资源" seq="4" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+
+		<resource id="jsgl" name="角色管理" url="/securityJsp/maintain/sysRole.jsp" description="管理系统中用户的角色" seq="2" iconCls="ext-icon-tux" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="jslb" name="角色列表" url="/maintain/sysRole!grid" description="查询角色列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jstj" name="添加角色" url="/maintain/sysRole!save" description="添加角色" seq="1" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jsbj" name="编辑角色" url="/maintain/sysRole!update" description="编辑角色" seq="2" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jssc" name="删除角色" url="/maintain/sysRole!delete" description="删除角色" seq="3" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jsck" name="查看角色" url="/maintain/sysRole!getById" description="查看角色" seq="4" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jssq" name="角色授权" url="/maintain/sysRole!grant" description="角色授权" seq="5" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+
+		<resource id="jggl" name="机构管理" url="/securityJsp/maintain/sysOrganization.jsp" description="管理系统中用户的机构" seq="3" iconCls="ext-icon-group_link" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="jglb" name="机构列表" url="/maintain/sysOrganization!treeGrid" description="查询机构列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgtj" name="添加机构" url="/maintain/sysOrganization!save" description="添加机构" seq="1" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgbj" name="编辑机构" url="/maintain/sysOrganization!update" description="编辑机构" seq="2" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgsc" name="删除机构" url="/maintain/sysOrganization!delete" description="删除机构" seq="3" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgck" name="查看机构" url="/maintain/sysOrganization!getById" description="查看机构" seq="4" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgsq" name="机构授权" url="/maintain/sysOrganization!grant" description="机构授权" seq="5" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+
+		<resource id="yhgl" name="用户管理" url="/securityJsp/maintain/sysUser.jsp" description="管理系统中用户的用户" seq="4" iconCls="ext-icon-user_suit" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="yhlb" name="用户列表" url="/maintain/sysUser!grid" description="查询用户列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhtj" name="添加用户" url="/maintain/sysUser!save" description="添加用户" seq="1" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhbj" name="编辑用户" url="/maintain/sysUser!update" description="编辑用户" seq="2" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhsc" name="删除用户" url="/maintain/sysUser!delete" description="删除用户" seq="3" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhck" name="查看用户" url="/maintain/sysUser!getById" description="查看用户" seq="4" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhjs" name="用户角色" url="/maintain/sysUser!grantRole" description="编辑用户角色" seq="5" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhjg" name="用户机构" url="/maintain/sysUser!grantOrganization" description="编辑用户机构" seq="6" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="czmm" name="重置密码" url="/maintain/sysUser!resetPwd" description="重置密码" seq="7" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+
+		<resource id="dwzlgl" name="单位资料管理" url="/securityJsp/maintain/syscompany.jsp" description="单位资料管理" seq="5" iconCls="ext-icon-user_suit" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="dwzlbc" name="保存资料" url="/maintain/sysCompany!save" description="保存资料" seq="1" iconCls="ext-icon-bullet_wrench" pid="dwzlgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="cxdwzl" name="查询单位资料" url="/maintain/sysCompany!getById" description="查询单位资料" seq="2" iconCls="ext-icon-bullet_wrench" pid="dwzlgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="tbsdgl" name="填报时段管理" url="/securityJsp/maintain/currentperiod.jsp" description="填报时段管理" seq="6" iconCls="ext-icon-user_suit" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="bctbsd" name="保存填报时段" url="/maintain/currentPeriod!save" description="保存填报时段" seq="1" iconCls="ext-icon-bullet_wrench" pid="tbsdgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="cxtblx" name="查询填报类型" url="/maintain/currentPeriod!getById" description="查询填报类型" seq="2" iconCls="ext-icon-bullet_wrench" pid="tbsdgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		<resource id="xxtbzgl" name="新系统标准管理" url="/securityJsp/maintain/systemebenchmark.jsp" description="新系统标准管理" seq="7" iconCls="ext-icon-user_suit" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="xtbzlb" name="系统标准列表" url="/maintain/systemebenchmark!grid" description="系统标准列表" seq="1" iconCls="ext-icon-bullet_wrench" pid="xxtbzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xtbzgxsj" name="更新数据" url="/maintain/currentPeriod!getById" description="更新数据" seq="2" iconCls="ext-icon-bullet_wrench" pid="xxtbzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xtbzcxsj" name="查询数据" url="/maintain/systemebenchmark!getById" description="查询数据" seq="3" iconCls="ext-icon-bullet_wrench" pid="xxtbzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		
+		<resource id="xtbzgl" name="系统标准管理" url="/securityJsp/maintain/systemStandard.jsp" description="系统标准管理" seq="8" iconCls="ext-icon-user_suit" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="gxbzsj" name="更新标准数据" url="/maintain/systemStandard!update" description="更新标准数据" seq="1" iconCls="ext-icon-bullet_wrench" pid="xtbzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bzxtbzlb" name="系统标准列表" url="/maintain/systemStandard!grid" description="系统标准列表" seq="2" iconCls="ext-icon-bullet_wrench" pid="xtbzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xtbzcxsj" name="查询数据" url="/maintain/systemebenchmark!getById" description="查询数据" seq="3" iconCls="ext-icon-bullet_wrench" pid="xtbzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xtbztjsj" name="添加数据" url="/maintain/systemStandard!save" description="添加数据" seq="4" iconCls="ext-icon-bullet_wrench" pid="xtbzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+
+
+		<resource id="xtrzgl" name="系统日志管理" url="/securityJsp/maintain/systemlog.jsp" description="系统日志管理" seq="9" iconCls="ext-icon-user_suit" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="xtrzcx" name="日志查询" url="/maintain/systemLogView!grid" description="日志查询" seq="1" iconCls="ext-icon-bullet_wrench" pid="xtrzgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+
+
+
+
+		<resource id="xtjk" name="系统监控" url="/welcome.jsp" description="监控系统运行情况等信息" seq="1" iconCls="ext-icon-monitor">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+
+		<resource id="monitoring" name="项目监控" url="/monitoring" description="监控项目" seq="1" iconCls="ext-icon-monitor_error" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="druid" name="数据源监控" url="/druid" description="监控数据源" seq="2" iconCls="ext-icon-monitor_link" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="actionConfigBrowser" name="Action映射监控" url="/config-browser/showConstants.cxl" description="Action映射情况监控" seq="3" iconCls="ext-icon-monitor_lightning" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="online" name="用户登录历史监控" url="/securityJsp/maintain/sysOnline.jsp" description="监控用户登录、注销" seq="4" iconCls="ext-icon-chart_line" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="onlineGrid" name="用户登录历史列表" url="/maintain/sysOnline!grid" description="用户登录、注销历史记录列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="online">
+			<resourcetype id="1" name="功能" />
+		</resource>
+
+		<resource id="xtbb" name="系统报表" url="/welcome.jsp" description="查看系统相关报表图标" seq="2" iconCls="ext-icon-chart_curve">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+
+		<resource id="userCreateDatetimeChart" name="注册时间分布" url="/securityJsp/maintain/chart/userCreateDatetimeChart.jsp" description="用户注册时间分布报表" seq="1" iconCls="ext-icon-chart_bar" pid="xtbb">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="userRoleChart" name="用户角色分布" url="/securityJsp/maintain/chart/userRoleChart.jsp" description="用户角色分布" seq="2" iconCls="ext-icon-chart_pie" pid="xtbb">
+			<resourcetype id="0" name="菜单" />
+		</resource>		
+		
+		
+		
+		
+		<resource id="tzgg" name="通知公告管理" url="/welcome.jsp" description="管理通知搞搞信息" seq="1" iconCls="ext-icon-monitor">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		<resource id="cx" name="查询" url="/notice/viewnotice!grid" description="查询" seq="0" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		
+		
+		
+		<resource id="tzfb" name="通知发布" url="/securityJsp/notice/notice.jsp" description="发布通知信息" seq="1" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="tjtz" name="添加通知" url="/notice/notice!save" description="对通知公告进行添加" seq="0" iconCls="ext-icon-bullet_wrench" pid="tzfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="sctz" name="删除通知" url="/notice/notice!delete" description="删除通知" seq="1" iconCls="ext-icon-bullet_wrench" pid="tzfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="fbtz" name="发布通知" url="/notice/notice!put" description="发布通知" seq="2" iconCls="ext-icon-bullet_wrench" pid="tzfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="gxtz" name="更新通知" url="/notice/notice!update" description="更新通知" seq="3" iconCls="ext-icon-bullet_wrench" pid="tzfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xjdw" name="选取单位" url="/notice/notice!selectcompany" description="选取单位" seq="4" iconCls="ext-icon-bullet_wrench" pid="tzfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="ggfb" name="公告发布" url="/securityJsp/notice/publicnotice.jsp" description="发布公告信息" seq="2" iconCls="ext-icon-newspaper_link" pid="tzgg">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		<resource id="tjgg" name="添加公告" url="/notice/notice!save" description="添加公告" seq="1" iconCls="ext-icon-bullet_wrench" pid="ggfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="scgg" name="删除公告" url="/notice/notice!delete" description="删除公告" seq="2" iconCls="ext-icon-bullet_wrench" pid="ggfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="fbgg" name="发布公告" url="/notice/notice!put" description="删除公告" seq="3" iconCls="ext-icon-bullet_wrench" pid="ggfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="gxgg" name="更新公告" url="/notice/notice!update" description="更新公告" seq="4" iconCls="ext-icon-bullet_wrench" pid="ggfb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="tzggfl" name="通知公告分类" url="/securityJsp/notice/noticeClass.jsp" description="通知公告分类" seq="3" iconCls="ext-icon-newspaper_link" pid="tzgg">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="cktzggfl" name="查询通知公告分类" url="/notice/noticeClass!getById" description="查询通知公告分类" seq="1" iconCls="ext-icon-bullet_wrench" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="tjtzlx" name="添加通知公告类型" url="/notice/noticeClass!save" description="添加通知公告类型" seq="2" iconCls="ext-icon-bullet_wrench" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="lxsc" name="通告公告类型删除" url="/notice/noticeClass!delete" description="通告公告类型删除" seq="3" iconCls="ext-icon-bullet_wrench" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="tzgx" name="通知公告类型更新" url="/notice/noticeClass!update" description="通知公告类型更新" seq="4" iconCls="ext-icon-bullet_wrench" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="ckfl" name="查看通知公告分类" url="/notice/noticeClass!grid" description="查看通知公告分类" seq="5" iconCls="ext-icon-bullet_wrench" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="tzxx" name="通知信息" url="/securityJsp/notice/shownotice.jsp" description="查看通知信息" seq="4" iconCls="ext-icon-newspaper_link" pid="tzgg">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="dbxx" name="代办信息" url="/securityJsp/notice/showdlbj.jsp" description="查看代办信息" seq="5" iconCls="ext-icon-newspaper_link" pid="tzgg">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="ggxx" name="公告信息" url="/securityJsp/notice/showpublicnotice.jsp" description="查看公告信息" seq="6" iconCls="ext-icon-newspaper_link" pid="tzgg">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="dxfs" name="短信发送" url="/securityJsp/notice/sendmessage.jsp" description="发送短信信息" seq="7" iconCls="ext-icon-newspaper_link" pid="tzgg">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="fs" name="发送" url="/notice/sendaction!send" description="发送短信" seq="1" iconCls="ext-icon-bullet_wrench" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="ckgg" name="查看公告" url="/notice/notice/getByid" description="查询公告" seq="8" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="dbcx" name="待办查询" url="/notice/dlbj!grid" description="查询公告" seq="9" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="gxtzdw" name="更新通知单位" url="/notice/noticecompany!update" description="更新通知单位" seq="10" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="cxtzhi" name="查询通知" url="/notice/notice!grid" description="查询通知" seq="11" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="cktzhign" name="查看通知" url="/notice/notice!getById" description="查看通知" seq="12" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xczyfx" name="查看资源分析" url="/notice/home!show" description="查看资源分析" seq="13" iconCls="ext-icon-book_addresses" pid="tzgg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="sjgl" name="数据管理" url="/welcome.jsp" description="对能源上报信息进行管理" seq="2" iconCls="ext-icon-monitor">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		<resource id="jbsjtb" name="基本数据填报" url="/securityJsp/business/energyData.jsp" description="基本数据填报" seq="1" iconCls="ext-icon-newspaper_link" pid="sjgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="cktsxx" name="查看提示信息" url="/business/energyData!seeAlertInfo" description="查看提示信息" seq="1" iconCls="ext-icon-book_addresses" pid="jbsjtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+			<resource id="ckshyj" name="查看审核意见" url="/business/energyData!seeApproval" description="查看审核意见" seq="2" iconCls="ext-icon-book_addresses" pid="jbsjtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="sjbj" name="数据编辑" url="/business/energyData!update" description="数据编辑" seq="3" iconCls="ext-icon-book_addresses" pid="jbsjtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="tianjiashuju" name="添加数据" url="/business/energyData!openPage" description="添加数据" seq="4" iconCls="ext-icon-book_addresses" pid="jbsjtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="sjlbgn" name="数据列表" url="/business/energyData!grid" description="数据列表" seq="5" iconCls="ext-icon-book_addresses" pid="jbsjtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="sjcxgn" name="数据查询" url="/business/energyData!getById" description="数据查询" seq="6" iconCls="ext-icon-book_addresses" pid="jbsjtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="sjbcgn" name="数据保存" url="/business/energyData!save" description="数据保存" seq="7" iconCls="ext-icon-book_addresses" pid="jbsjtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		<resource id="sjshbn" name="数据审核" url="/securityJsp/business/auditEnergyData.jsp" description="数据审核" seq="2" iconCls="ext-icon-newspaper_link" pid="sjgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="shujuxianshi" name="数据显示" url="/business/dataAudit!grid" description="数据显示" seq="1" iconCls="ext-icon-book_addresses" pid="sjshbn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="piliangshenhe" name="批量审核" url="/business/dataAudit!batchAudit" description="批量审核" seq="2" iconCls="ext-icon-book_addresses" pid="sjshbn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="sjbcgn" name="单条审核" url="/business/dataAudit!singleAudit" description="单条审核" seq="3" iconCls="ext-icon-book_addresses" pid="sjshbn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		
+		<resource id="sjtg" name="数据退改" url="/securityJsp/business/rejectEnergyData.jsp" description="数据退改" seq="3" iconCls="ext-icon-newspaper_link" pid="sjgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="sjtgai" name="数据退改" url="/business/dataReject!reject" description="数据退改" seq="1" iconCls="ext-icon-book_addresses" pid="sjtg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bshujuliebiao" name="允许驳回数据列表" url="/business/dataReject!grid" description="数据列表" seq="2" iconCls="ext-icon-book_addresses" pid="sjtg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		<resource id="sjcbgn" name="数据催报" url="/securityJsp/business/urgedEnergyData.jsp" description="数据催报" seq="4" iconCls="ext-icon-newspaper_link" pid="sjgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		<resource id="cuibaoshujuliebiao" name="催报数据列表" url="/business/urgedData!grid" description="催报数据列表" seq="1" iconCls="ext-icon-book_addresses" pid="sjcbgn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bshujuliebiao" name="数据列表" url="/business/dataUrged!grid" description="数据列表" seq="2" iconCls="ext-icon-book_addresses" pid="sjcbgn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bquanbucuibao" name="全部催报" url="/business/dataReject!grid" description="全部催报" seq="3" iconCls="ext-icon-book_addresses" pid="sjcbgn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="batchcuibao" name="批量催报" url="/business/dataAudit!batchUrged" description="批量催报" seq="4" iconCls="ext-icon-book_addresses" pid="sjcbgn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="duanxinquanbucuibao" name="短信全部催报" url="/business/dataAudit!allInfoUrged" description="短信全部催报" seq="5" iconCls="ext-icon-book_addresses" pid="sjcbgn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="singlecuibao" name="数据单条催报" url="/business/urgedData!singleUrged" description="数据单条催报" seq="6" iconCls="ext-icon-book_addresses" pid="sjcbgn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="duanxincuibao" name="短信批量催报" url="/business/dataAudit!batchInfoUrged" description="短信批量催报" seq="7" iconCls="ext-icon-book_addresses" pid="sjcbgn">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		
+		
+		<resource id="tzgl" name="台账管理" url="" description="查看系统的台账信息" seq="3" iconCls="ext-icon-monitor">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="jbqktz" name="基本情况台账" url="/securityJsp/accounts/baseAccount.jsp" description="基本情况台账" seq="1" iconCls="ext-icon-book_addresses" pid="tzgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="nyxftz" name="能源消费台账" url="/securityJsp/accounts/baseAccount.jsp" description="能源消费台账" seq="2" iconCls="ext-icon-book_addresses" pid="tzgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="jfxftz" name="机房消费台账" url="/securityJsp/accounts/baseAccount.jsp" description="机房消费台账" seq="3" iconCls="ext-icon-book_addresses" pid="tzgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="cuxftz" name="采暖消费台账" url="/securityJsp/accounts/baseAccount.jsp" description="采暖消费台账" seq="4" iconCls="ext-icon-book_addresses" pid="tzgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		
+		
+		<resource id="fxtj" name="分析统计" url="" description="对系统数据进行统计分析" seq="4" iconCls="ext-icon-monitor">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="fjtjbb" name="分级统计报表" url="/securityJsp/statistics/classification.jsp" description="分级统计报表" seq="1" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="zxtj" name="执行统计" url="/statistics/classification!doStatistics" description="执行统计" seq="1" iconCls="ext-icon-book_addresses" pid="fjtjbb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="hqbb" name="获取报表" url="/statistics/classification!getReport" description="获取报表" seq="2" iconCls="ext-icon-book_addresses" pid="fjtjbb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="dcbb" name="导出报表" url="/statistics/classification!doStatistics" description="导出报表" seq="3" iconCls="ext-icon-book_addresses" pid="fjtjbb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="hqejlb" name="获取二级单位列表" url="/maintain/sysOrganization!getComboboxForLvlTwo" description="获取二级单位列表" seq="4" iconCls="ext-icon-book_addresses" pid="fjtjbb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="fltjbb" name="分类统计报表" url="/securityJsp/statistics/classify.jsp" description="分类统计报表" seq="2" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="scbb" name="生成报表" url="/statistics/classify!generateReport" description="生成报表" seq="1" iconCls="ext-icon-book_addresses" pid="fltjbb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="fldcbb" name="导出报表" url="/statistics/classify!exportExcel" description="导出报表" seq="2" iconCls="ext-icon-book_addresses" pid="fltjbb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		
+		<resource id="zxjfbb" name="中心机房统计报表" url="/securityJsp/statistics/machineRoom.jsp" description="中心机房统计报表" seq="3" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		<resource id="cntjbb" name="采暖统计报表" url="/securityJsp/statistics/heating.jsp" description="采暖统计报表" seq="4" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		<resource id="nyxfph" name="能源消费排行" url="/securityJsp/statistics/consumptionList.jsp" description="能源消费排行" seq="5" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="nyzxtj" name="执行统计" url="/statistics/consumptionList!doStatistics" description="执行统计" seq="1" iconCls="ext-icon-book_addresses" pid="nyxfph">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="nyhqlb" name="获取列表" url="/statistics/consumptionList!generateGridReport" description="获取列表" seq="2" iconCls="ext-icon-book_addresses" pid="nyxfph">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="jcxxtb" name="基础信息图表" url="/securityJsp/statistics/basicInformation.jsp" description="基础信息图表" seq="6" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="scjctb" name="生成图表" url="/statistics/basicInformation!generateChart" description="生成图表" seq="1" iconCls="ext-icon-book_addresses" pid="jcxxtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="nhxxtb" name="能耗信息图表" url="/securityJsp/statistics/consumptionChart.jsp" description="能耗信息图表" seq="7" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="nyxxsctb" name="生成图表" url="/statistics/consumptionChart!generateChart" description="生成图表" seq="1" iconCls="ext-icon-book_addresses" pid="nhxxtb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="nyqktsb" name="能源消费情况提示表" url="/securityJsp/statistics/consumptionPrompt.jsp" description="能源消费情况提示表" seq="8" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		
+		<resource id="nyxfzxtj" name="执行统计" url="/statistics/consumptionPrompt!doStatistics" description="执行统计" seq="1" iconCls="ext-icon-book_addresses" pid="nyqktsb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="nyxfzxtj" name="获取列表" url="/statistics/consumptionPrompt!generateGridReport" description="获取列表" seq="2" iconCls="ext-icon-book_addresses" pid="nyqktsb">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+		<resource id="jnqktj" name="节能情况统计" url="/securityJsp/statistics/consumptionSave.jsp" description="节能情况统计" seq="9" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="jnxkzxtj" name="执行统计" url="/statistics/consumptionSave!doStatistics" description="执行统计" seq="1" iconCls="ext-icon-book_addresses" pid="jnqktj">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jnqkhqlb" name="获取列表" url="/statistics/consumptionSave!generateGridReport" description="获取列表" seq="2" iconCls="ext-icon-book_addresses" pid="jnqktj">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		<resource id="ntfxbg" name="年度能耗分析报告" url="/securityJsp/statistics/statReport.jsp" description="年度能耗分析报告" seq="10" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="ndscbb" name="生成报告" url="/statistics/statreport!exportWord" description="生成报告" seq="2" iconCls="ext-icon-book_addresses" pid="ntfxbg">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		<resource id="tjzxing" name="执行统计" url="/statistics/consumptionPrompt!doStatistics" description="执行统计" seq="11" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="hqlbiao" name="获取列表" url="/statistics/consumptionPrompt!generateGridReport" description="获取列表" seq="12" iconCls="ext-icon-book_addresses" pid="fxtj">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		
+		
+		
+	</resources>
+
+	<roles name="角色">
+		<role id="0" name="超管" description="拥有系统所有权限" seq="0" />
+		<role id="1" name="Guest" description="只有查看权限" seq="1" />
+		<role id="2" name="admin1" description="只有资源管理权限" seq="2" />
+		<role id="3" name="admin2" description="只有角色管理权限" seq="3" />
+		<role id="4" name="admin3" description="只有机构管理权限" seq="4" />
+		<role id="5" name="admin4" description="只有用户管理权限" seq="5" />
+		<role id="6" name="admin5" description="只有系统监控权限" seq="6" />
+	</roles>
+
+	<roles_resources name="角色和资源对应关系">
+		<role id="1" name="Guest角色">
+			<resource id="xtgl" name="系统管理" />
+
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zyck" name="查看资源" />
+
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jsck" name="查看角色" />
+
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgck" name="查看机构" />
+
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhck" name="查看用户" />
+			
+		</role>
+
+		<role id="2" name="admin1">
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zytj" name="添加资源" />
+			<resource id="zybj" name="编辑资源" />
+			<resource id="zysc" name="删除资源" />
+			<resource id="zyck" name="查看资源" />
+		</role>
+
+		<role id="3" name="admin2">
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jstj" name="添加角色" />
+			<resource id="jsbj" name="编辑角色" />
+			<resource id="jssc" name="删除角色" />
+			<resource id="jsck" name="查看角色" />
+			<resource id="jssq" name="角色授权" />
+		</role>
+
+		<role id="4" name="admin3">
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgtj" name="添加机构" />
+			<resource id="jgbj" name="编辑机构" />
+			<resource id="jgsc" name="删除机构" />
+			<resource id="jgck" name="查看机构" />
+			<resource id="jgsq" name="机构授权" />
+		</role>
+
+		<role id="5" name="admin4">
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhtj" name="添加用户" />
+			<resource id="yhbj" name="编辑用户" />
+			<resource id="yhsc" name="删除用户" />
+			<resource id="yhck" name="查看用户" />
+			<resource id="yhjs" name="用户角色" />
+			<resource id="yhjg" name="用户机构" />
+		</role>
+
+		<role id="6" name="admin5">
+			<resource id="xtjk" name="系统监控" />
+
+			<resource id="monitoring" name="项目监控" />
+			<resource id="druid" name="数据源监控" />
+			<resource id="actionConfigBrowser" name="Action映射监控" />
+			<resource id="online" name="用户登录历史监控" />
+			<resource id="onlineGrid" name="用户登录历史列表" />
+		</role>
+	</roles_resources>
+
+	<organizations name="机构">
+		<organization id="0" name="一级机构" address="机构地址" code="机构编号" iconCls="ext-icon-brick" seq="0" />
+	</organizations>
+
+	<organizations_resources name="机构和资源对应关系">
+		<organization id="0" name="一级机构">
+			<resource id="xtgl" name="系统管理" />
+
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zyck" name="查看资源" />
+
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jsck" name="查看角色" />
+
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgck" name="查看机构" />
+
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhck" name="查看用户" />
+		</organization>
+	</organizations_resources>
+
+	<users name="用户">
+		<user id="0" loginname="sysadmin" pwd="123456" name="sysadmin" sex="1" age="30" />
+		<user id="1" loginname="guest" pwd="123456" name="guest" sex="1" age="30" />
+		<user id="2" loginname="admin1" pwd="123456" name="admin1" sex="0" age="30" />
+		<user id="3" loginname="admin2" pwd="123456" name="admin2" sex="0" age="30" />
+		<user id="4" loginname="admin3" pwd="123456" name="admin3" sex="0" age="30" />
+		<user id="5" loginname="admin4" pwd="123456" name="admin4" sex="0" age="30" />
+		<user id="6" loginname="admin5" pwd="123456" name="admin5" sex="0" age="30" />
+	</users>
+
+	<users_roles name="用户和角色对应关系">
+		<user id="1" loginname="guest">
+			<role id="1" name="Guest角色" />
+		</user>
+		<user id="2" loginname="admin1">
+			<role id="2" name="admin1" />
+		</user>
+		<user id="3" loginname="admin2">
+			<role id="3" name="admin2" />
+		</user>
+		<user id="4" loginname="admin3">
+			<role id="4" name="admin3" />
+		</user>
+		<user id="5" loginname="admin4">
+			<role id="5" name="admin4" />
+		</user>
+		<user id="6" loginname="admin5">
+			<role id="6" name="admin5" />
+		</user>
+	</users_roles>
+
+	<users_organizations name="用户和机构的关系">
+		<user id="1" loginname="guest">
+			<organization id="0" name="一级机构" />
+		</user>
+	</users_organizations>
+
+</data>

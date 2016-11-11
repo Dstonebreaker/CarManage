@@ -1,0 +1,94 @@
+package com.car.service.car;
+
+import javax.servlet.ServletContext;
+
+import com.car.entity.car.TMessage;
+import com.car.entity.message.MsgAlarm;
+
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.ServletContextAware;
+
+import com.car.service.car.IOMessageService;
+import com.framework.util.ConfigUtil;
+import com.framework.util.HqlFilter;
+
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+
+/**
+ * @author 官京  短信服务启动
+ *
+ */
+@Component
+public class MessageListener implements InitializingBean,ServletContextAware {
+
+	
+	@Autowired
+	private IOMessageService omessageService;
+	
+	@Autowired
+	private IMessageSercice iMessageSercice;
+	public static Thread mythred;
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	/**
+	 *当tomcat启动spring已经成功加载后执行这个方法 
+	 * MessageService是一个短信服务类
+	 */
+	@Override
+	public void setServletContext(ServletContext arg0) {
+		mythred=new Thread(new Runnable() {
+		
+			@Override
+			public void run() {
+
+				HqlFilter hqlFilter=new HqlFilter();
+				hqlFilter.addFilter("QUERY_t#messStatus_I_EQ","1");
+					while (true) {
+						try {
+						List<TMessage> messageList=iMessageSercice.findByFilter(hqlFilter);
+						int count=0;
+						for (TMessage message:messageList){
+							String[] phones=message.getMessPhones().split(";");
+							for (int i = 0; i < phones.length; i++) {
+								count++;
+								MsgAlarm msgAlarm=new MsgAlarm();
+								String id=message.getMessId().replace("-","");
+								id=id.substring(0,id.length()-3)+count;
+								msgAlarm.setRecordId(id);
+								msgAlarm.setPlatecolor(12+"");
+								Date date=new Date(new Date().getTime()+1000) ;
+								msgAlarm.setPictime(date);
+								msgAlarm.setCreatetime(date);
+								msgAlarm.setManageResult(0+"");
+								msgAlarm.setFlag(0+"");
+								msgAlarm.setCaseLeaderTel(phones[i]);
+//								msgAlarm.setCaseLeaderTel("13796999229");
+								msgAlarm.setSmstext(message.getMessInfo()+"(调度服务中心)");								
+								omessageService.save(msgAlarm);
+								message.setMessStatus(2);
+								iMessageSercice.update(message);
+							}
+							
+						}
+						Thread.sleep(Integer.valueOf(ConfigUtil.get("messageSleep")));
+						}catch (Exception e){
+							e.printStackTrace();
+						}
+					}
+
+			}
+});
+		//mythred.start();
+	}
+
+	
+	
+
+}
